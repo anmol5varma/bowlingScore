@@ -22,7 +22,7 @@ function scoreTurnWise(arr) {
       if (arr[(i + 1) * 2] === 10) {
         eachTurnScore.push(20 + arr[(i + 2) * 2]);
       } else {
-        eachTurnScore.push(10 + arr[(i + 1)] + arr[(i + 2)]);
+        eachTurnScore.push(10 + arr[(i + 1) * 2] + arr[((i + 1) * 2) + 1]);
       }
     } else if ((arr[i * 2] + arr[(i * 2) + 1]) === 10) {
       eachTurnScore.push(10 + arr[(i + 1) * 2]);
@@ -43,11 +43,13 @@ function calculateScore(eachTurnScore) {
 }
 function calScore(arg) {
   const arr = turnToThrow(arg);
+  console.log(arr);
   const eachTurnScore = scoreTurnWise(arr);
-  // console.log(eachTurnScore);
+  console.log(eachTurnScore);
   return calculateScore(eachTurnScore);
 }
 
 // console.log(calScore([3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6]));
+calScore([0, 8, 10, 9, 1, 2, 4, 10, 3, 7, 4, 5, 0, 0, 0, 10, 6, 3]);
 
 module.exports = calScore;

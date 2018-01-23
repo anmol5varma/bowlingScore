@@ -44,8 +44,8 @@ function calculateScore(eachTurnScore) {
 function calScore(arg) {
   const arr = turnToThrow(arg);
   const eachTurnScore = scoreTurnWise(arr);
-  // console.log(eachTurnScore);
-  return calculateScore(arr, eachTurnScore);
+  console.log(eachTurnScore);
+  return calculateScore(eachTurnScore);
 }
 
 console.log(calScore([3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6]));
